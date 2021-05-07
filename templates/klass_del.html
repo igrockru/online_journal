@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="margin-left: 40px; margin-right:40px">
+    <h1>Удаление класса</h1>
+    <form action="" method="post">
+    {{ form.hidden_tag() }}
+            <p>
+        {{ form.klass.label }}<br>
+        {{ form.klass(class="form-control") }}<br>
+        {% for error in form.klass.errors %}
+            <p class="alert alert-danger" role="alert">
+                {{ error }}
+            </p>
+        {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+    {{message}}
+    </form>
+</div>
+{% endblock %}

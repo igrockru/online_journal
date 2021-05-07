@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if current_user.is_authenticated and current_user.id == 1 %}
+                <h1>Список созданных классов</h1>
+            <table cellpadding="10" >
+                <tr style="background: #D3D3D3">
+                    <td valign="center">id</td>
+                    <td valign="center">класс</td>
+            {% for item in klass_list%}
+                <tr style="background: #E3E3E3">
+                    <td valign="center">{{item.id}}</td>
+                    <td valign="center">{{item.kl_name}} </td>
+                </tr>
+            {% endfor %}
+            </table>
+            <p>
+                <a class="btn btn-primary " href="/klass_del" >Удалить класс</a>
+            </p>
+            <p>
+                <a class="btn btn-primary " href="/klass_add" >Добавить класс</a>
+            </p>
+
+
+
+    {% endif%}
+{% endblock %}

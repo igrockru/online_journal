@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+            <center>
+                <h1>Текущая успеваемость</h1>
+            </center>
+            <table cellpadding="10" align = "center">
+                <tr style="background: #D3D3D3">
+                    <td valign="center">Дата</td>
+                    <td valign="center">Работа</td>
+                    <td valign="center">Оценка</td>
+            {% for item in marks_list%}
+                <tr style="background: #E3E3E3">
+                    <td valign="center">{{item[0]}}</td>
+                    <td valign="center">{{item[1]}} </td>
+                    <td valign="center">{{item[2]}} </td>
+
+                </tr>
+            {% endfor %}
+            </table>
+            <a class="btn btn-primary " href="/user_self_del">Удалить аккаунт</a>
+
+    {% endif%}
+{% endblock %}
