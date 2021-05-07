@@ -181,6 +181,8 @@ def marks_log():
     return redirect('/login')
 
 if __name__ == '__main__':
+    db_session.global_init("db/my_base.db")
+    db_sess = db_session.create_session()
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
 
