@@ -179,8 +179,11 @@ def marks_log():
         return render_template("admin_page.html", klass_list=klass_l)
     return redirect('/login')
 
-
 if __name__ == '__main__':
-    db_session.global_init("db/my_base.db")
-    db_sess = db_session.create_session()
-    app.run(port=8080, host='127.0.0.1')
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
+
+#if __name__ == '__main__':
+    #db_session.global_init("db/my_base.db")
+    #db_sess = db_session.create_session()
+    #app.run(port=8080, host='127.0.0.1')
