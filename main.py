@@ -4,6 +4,7 @@ from data.__all_models import User, Klass, Klass_works, Marks, LoginForm, \
     RegisterForm, Check_del, Klass_del, Klass_add
 from flask_login import LoginManager, login_user, logout_user, login_required, \
     current_user
+import os
 
 app = Flask(__name__)
 login_manager = LoginManager()
